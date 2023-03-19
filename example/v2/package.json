@@ -1,0 +1,16 @@
+{
+  "name": "v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "lib": "vue-cli-service build --target lib  --name index --dest ../../lib/v2 --entry out.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "element-ui": "^2.15.13",
+    "vue": "^2.7.14"
+  }
+}

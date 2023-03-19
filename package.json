@@ -1,15 +1,27 @@
 {
   "name": "hello-world",
-  "version": "0.1.0",
+  "version": "0.1.8",
   "private": true,
+  "main": "lib/index.umd.js",
+  "module": "lib/index.common.js",
+  "engines": {
+    "node": ">=14.21.3",
+    "npm":">=7.24.2"
+  },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "start": "npm run dev:2",
+    "dev:2": "cd example/v2 && npm run serve",
+    "dev:3": "cd example/v3 && npm run serve",
+    "build": "npm run lib -ws && npm run postinstall",
+    "lint": "vue-cli-service lint",
+    "switch3": "vue-demi-switch 3",
+    "switch2": "vue-demi-switch 2.7",
+    "postinstall": "node ./scripts/postinstall.js",
+    "fix": "vue-demi-fix && npm run postinstall"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.47",
+    "vue-demi": "^0.13.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -17,6 +29,7 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "core-js": "^3.8.3",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3"
   },
@@ -39,5 +52,8 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
+  ],
+  "workspaces": [
+    "example/*"
   ]
 }
